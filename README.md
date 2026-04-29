@@ -8,7 +8,9 @@ A collection of small browser projects. The root `index.html` page shows the fou
 
 Calxy is a local-only React app for planning study or work focus sessions. It lets users create sessions, view session history, and keep preferences in browser `localStorage` without a backend.
 
-Run it locally from the `Calxy` folder:
+Open the built app from `Calxy/dist/index.html`.
+
+To work on the source, run it locally from the `Calxy` folder:
 
 ```sh
 npm install
