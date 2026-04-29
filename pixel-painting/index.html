@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pixel Painting Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <div class="controls">
+      <label class="control">
+        <span>Color</span>
+        <input id="colorPicker" type="color" value="#4f8f86" />
+      </label>
+
+      <label class="control">
+        <span>Size</span>
+        <input id="sizeSlider" type="range" min="8" max="64" value="16" />
+        <span id="sizeLabel" class="mono">16 x 16</span>
+      </label>
+
+      <button id="paintBtn" class="btn active" type="button" aria-pressed="true">Paint</button>
+      <button id="eraserBtn" class="btn" type="button" aria-pressed="false">Eraser</button>
+      <button id="rainbowBtn" class="btn" type="button" aria-pressed="false">Rainbow</button>
+      <button id="gridBtn" class="btn" type="button" aria-pressed="true">Grid Lines</button>
+      <button id="clearBtn" class="btn danger" type="button">Clear</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="board" class="board" aria-label="Pixel painting board"></div>
+  </main>
+
+  <footer class="footer">
+    <span class="hint">Tip: click and drag to paint. Right-click to erase while in Paint mode.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

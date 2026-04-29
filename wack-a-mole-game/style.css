@@ -1,0 +1,199 @@
+:root {
+  --bg: #eef6f4;
+  --bg-deep: #dfeaf5;
+  --panel: #ffffff;
+  --panel-soft: #e3f0ed;
+  --line: #c7d8d5;
+  --text: #203036;
+  --muted: #65777f;
+  --accent: #4f9d8f;
+  --accent-strong: #347f73;
+  --warn: #d69038;
+  --danger: #c94f5a;
+  --health-good: #54a56f;
+  --health-warn: #d69038;
+  --health-danger: #c94f5a;
+  --shadow: rgba(34, 78, 82, .14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+  color: var(--text);
+}
+
+.screen {
+  display: none;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.screen.active {
+  display: block;
+}
+
+.screen.center.active {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+button:not(.circle) {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+button:not(.circle):hover {
+  background: var(--accent-strong);
+}
+
+#hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  background: var(--panel);
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px var(--shadow);
+}
+
+.stat {
+  min-width: 104px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+.value {
+  font-weight: 800;
+}
+
+#health-wrapper {
+  width: 240px;
+  height: 16px;
+  background: var(--panel-soft);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+#health-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--health-good);
+  transition: width .15s ease, background-color .15s ease;
+}
+
+#game-area {
+  position: relative;
+  margin-top: 16px;
+  height: 70vh;
+  min-height: 420px;
+  background:
+    linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)),
+    repeating-linear-gradient(45deg, transparent 0 18px, rgba(79, 157, 143, .07) 18px 20px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .55), 0 10px 28px var(--shadow);
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--circle-fill, #ffd7b5);
+  border: 2px solid var(--circle-border, #df8d63);
+  color: var(--circle-text, #3f2b22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-weight: 900;
+  font-size: 20px;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(70, 74, 80, .16);
+  transition: transform .12s ease, opacity .12s ease;
+}
+
+.circle:hover,
+.circle:focus-visible {
+  transform: scale(1.06);
+  outline: 3px solid rgba(79, 157, 143, .28);
+  outline-offset: 3px;
+}
+
+.circle.hit {
+  opacity: 0;
+  transform: scale(.6);
+}
+
+.circle.miss {
+  animation: missflash .3s linear;
+}
+
+@keyframes missflash {
+  from {
+    box-shadow: 0 0 0 0 rgba(201, 79, 90, .65);
+  }
+
+  to {
+    box-shadow: 0 0 0 14px rgba(201, 79, 90, 0);
+  }
+}
+
+.small {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+@media (max-width: 720px) {
+  .screen {
+    padding: 16px;
+  }
+
+  #hud {
+    gap: 10px;
+  }
+
+  .stat {
+    min-width: calc(50% - 5px);
+  }
+
+  #health-wrapper {
+    width: 100%;
+  }
+
+  #game-area {
+    height: 65vh;
+    min-height: 360px;
+  }
+}

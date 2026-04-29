@@ -1,0 +1,86 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid #dfe6e6;
+    background: rgba(255, 255, 255, 0.94);
+    padding: 0.85rem max(1rem, calc((100vw - 1120px) / 2));
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: #18212f;
+    font-size: 1.08rem;
+    font-weight: 900;
+}
+
+.brand:hover {
+    color: #18212f;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: inline-grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 8px;
+    background: #d05a3f;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.nav-link {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    border-radius: 6px;
+    color: #4f5d66;
+    font-weight: 800;
+    padding: 0.55rem 0.7rem;
+}
+
+.nav-link:hover {
+    background: #edf4f6;
+    color: #1d4a5c;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    background: #245c73;
+    color: #ffffff;
+}
+
+@media (max-width: 680px) {
+    .navbar {
+        display: grid;
+        padding: 0.75rem 0.75rem 0.65rem;
+    }
+
+    .nav-links {
+        overflow-x: auto;
+        padding-bottom: 0.1rem;
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-link {
+        flex: 0 0 auto;
+    }
+}

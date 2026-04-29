@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="game-header">
+        <div class="title-group">
+            <h1>Rock, Paper, Scissors Battle</h1>
+            <p id="result" aria-live="polite">Choose your moves</p>
+        </div>
+        <div id="score" aria-label="Score">
+            <div class="score-item">
+                <span>Player 1</span>
+                <strong id="pl1s">0</strong>
+            </div>
+            <div class="score-item">
+                <span>Player 2</span>
+                <strong id="pl2s">0</strong>
+            </div>
+        </div>
+        <button id="reset" type="button">Reset</button>
+    </header>
+
+    <main id="game">
+        <section class="player" aria-labelledby="player-one-title">
+            <h2 id="player-one-title">Player 1</h2>
+            <div class="hand-stage">
+                <img id="p1-hand" src="images/rock.png" class="hand-image" alt="Player 1 hand showing rock">
+            </div>
+            <div class="buttons">
+                <button type="button" data-player="pl1" data-choice="1">Rock</button>
+                <button type="button" data-player="pl1" data-choice="2">Paper</button>
+                <button type="button" data-player="pl1" data-choice="3">Scissors</button>
+            </div>
+            <p id="result1" class="player-status" aria-live="polite"></p>
+        </section>
+
+        <section class="player" aria-labelledby="player-two-title">
+            <h2 id="player-two-title">Player 2</h2>
+            <div class="hand-stage">
+                <img id="p2-hand" src="images/rock.png" class="hand-image flipped" alt="Player 2 hand showing rock">
+            </div>
+            <div class="buttons">
+                <button type="button" data-player="pl2" data-choice="1">Rock</button>
+                <button type="button" data-player="pl2" data-choice="2">Paper</button>
+                <button type="button" data-player="pl2" data-choice="3">Scissors</button>
+            </div>
+            <p id="result2" class="player-status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

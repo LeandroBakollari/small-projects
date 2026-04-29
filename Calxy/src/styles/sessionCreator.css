@@ -1,0 +1,231 @@
+.session-creator__header {
+    margin-bottom: 1.2rem;
+}
+
+.session-creator__progress {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+}
+
+.session-creator__progress-step {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #dfe6e6;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #64727a;
+    font-weight: 800;
+    padding: 0.7rem;
+}
+
+.session-creator__progress-step.active {
+    border-color: #245c73;
+    background: #edf4f6;
+    color: #1d4a5c;
+}
+
+.session-creator__progress-step.complete {
+    border-color: #a9d4b1;
+    background: #edf7ef;
+    color: #215b30;
+}
+
+.session-creator__progress-dot {
+    flex: 0 0 auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.session-creator__progress-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.session-creator__card {
+    display: grid;
+    gap: 1rem;
+}
+
+.session-stage {
+    min-width: 0;
+    border: 1px solid #dfe6e6;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 16px 36px -34px rgba(21, 31, 42, 0.5);
+    padding: 1.25rem;
+}
+
+.session-stage__lead {
+    max-width: 680px;
+    color: #53616a;
+    line-height: 1.6;
+    margin: 0.4rem 0 1.15rem;
+    overflow-wrap: break-word;
+}
+
+.session-stage__hint {
+    color: #64727a;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 0.3rem;
+}
+
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.timing-total {
+    display: grid;
+    gap: 0.55rem;
+    border: 1px solid #dfe6e6;
+    border-radius: 8px;
+    background: #fbfcfc;
+    margin-top: 0.2rem;
+    padding: 1rem;
+}
+
+.timing-total > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.timing-total span {
+    color: #64727a;
+    font-weight: 800;
+}
+
+.timing-total strong {
+    color: #18212f;
+    font-size: 1.65rem;
+    line-height: 1;
+}
+
+.timing-total p {
+    color: #53616a;
+    line-height: 1.45;
+}
+
+.quick-actions,
+.preset-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: -0.35rem 0 1rem;
+}
+
+.chip-button,
+.preset-button {
+    min-height: 38px;
+    border-color: #c9d4d8;
+    background: #ffffff;
+    color: #245c73;
+    padding: 0.6rem 0.75rem;
+}
+
+.chip-button:hover,
+.preset-button:hover,
+.preset-button.active {
+    border-color: #245c73;
+    background: #edf4f6;
+    color: #1d4a5c;
+}
+
+.session-stage__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.65rem;
+    margin-top: 1rem;
+}
+
+.session-stage__actions--left {
+    justify-content: flex-start;
+}
+
+.summary-card {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid #dfe6e6;
+    border-bottom: 1px solid #dfe6e6;
+    margin-top: 1rem;
+}
+
+.summary-row {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 1rem;
+    padding: 0.9rem 0;
+}
+
+.summary-row + .summary-row {
+    border-top: 1px solid #edf0f1;
+}
+
+.summary-row strong,
+.summary-list {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.summary-list .muted {
+    color: #8a969d;
+}
+
+.summary-list--plain {
+    padding-left: 0;
+}
+
+.summary-list--plain p {
+    color: #53616a;
+}
+
+.session-creator__toast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid #a9d4b1;
+    border-radius: 8px;
+    background: #edf7ef;
+    color: #215b30;
+    font-weight: 800;
+    padding: 0.9rem 1rem;
+}
+
+.toast-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.65rem;
+}
+
+@media (max-width: 780px) {
+    .session-creator__progress,
+    .field-grid,
+    .summary-row {
+        grid-template-columns: 1fr;
+    }
+
+    .session-creator__progress {
+        gap: 0.45rem;
+    }
+
+    .session-creator__progress-step {
+        padding: 0.65rem;
+    }
+
+    .session-creator__toast {
+        display: grid;
+    }
+}
