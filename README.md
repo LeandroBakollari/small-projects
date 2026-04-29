@@ -1,6 +1,8 @@
 # Small Projects
 
-A collection of small browser projects. 
+A collection of small browser projects. You can easily try here in GitHub Pages.
+
+`https://leandrobakollari.github.io/small-projects/`
 
 ## Projects
 
